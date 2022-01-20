@@ -131,3 +131,15 @@ Lo que viene del URL es en realidad un string, por lo que se lo convierte a numb
     **Eliminarse (no recomendado)** con .findByIdAndDelete(id)
 
     **Cambiar el estado** de activo a inactivo con .findByIdAndUpdate(id,{estado:false})
+
+* En los enviroments hay informacion sensible. En este caso esta la coneccion a la base de datos MONGO. Por este motivo se crea y se sube al repositorio y al servidor un example.env donde en realidad no se incluye el URL o cualquier informacion sensible.
+
+Lo que se hace es confirgurar en el servidor las variables de entorno para que no haya necesidad de que las tome del repositorio de github. 
+
+Si estuviera subido a github para despues subirlo al servidor y modificarlo en github para que no esté el url, tambien funcionaria pero seria tedioso hacer siempre el mismo proceso y por eso se configuran las variables de entorno sensibles en el servidor.
+
+**Para ver las variables de entorno** => heroku config
+
+**Para configurar variables de entorno en heroku**: (en el directorio vinculado al proyecto que se hizo el deploy) heroku config:set *nombre de la variable de entorno*=*"valor entre comillas de la variable de entorno"*.
+
+**Borrar las variables de entorno en heroku** => heroku config:unset *nombre de la variable a eliminar*.
