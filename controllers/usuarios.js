@@ -92,14 +92,13 @@ const usuariosDelete=async(req,res=response)=>{
 
     const {id}=req.params
 
-    // const usuarioEliminado= await Usuario.findByIdAndDelete(id);
+    
 
     const usuarioInactivo= await Usuario.findByIdAndUpdate(id,{estado:false});
 
     res.json({
         // msg:'Delete API - controlador',
         usuarioInactivo,
-        // usuarioEliminado
     })
 }
 
