@@ -2,7 +2,7 @@ const { Router } = require('express');
 const {check} = require('express-validator');
 
 const { esRoleValido, emailExiste, existeUsuarioPorId } = require('../helpers/db-validators');
-const { compr, comprobacionErrores } = require('../middlewares/comprobar-errores');
+const { comprobacionErrores } = require('../middlewares/comprobar-errores');
 
 const {
     usuariosGet,
