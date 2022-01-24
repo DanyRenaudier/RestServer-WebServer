@@ -90,14 +90,11 @@ const usuariosPatch=(req,res=response)=>{
 
 const usuariosDelete=async(req,res=response)=>{
 
-    const {id}=req.params
-
-    
+    const {id}=req.params;
 
     const usuarioInactivo= await Usuario.findByIdAndUpdate(id,{estado:false});
-
-    res.json({
-        // msg:'Delete API - controlador',
+    
+    res.json({ 
         usuarioInactivo,
     })
 }

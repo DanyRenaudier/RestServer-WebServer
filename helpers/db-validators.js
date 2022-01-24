@@ -4,8 +4,8 @@ const Role = require('../models/role');
 
 //Validacion de Rol
 const esRoleValido = async (rol='')=>{
-    const existRole= await Role.findOne({rol});
-    if(!existRole){
+    const existeRole= await Role.findOne({rol});
+    if(!existeRole){
         throw new Error(`No existe el rol ${rol} en la DB`)
     }
 }
